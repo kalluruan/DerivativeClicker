@@ -760,6 +760,9 @@ function moneyButtonClick(amount) {
 	if(ifUpdate) updateInventory();
 }
 
+
+
+
 function versionControl(ifImport){
 	//resets if the current version is incompatible with the savefile
 	if(player.versionNum < 0.22){
@@ -853,6 +856,10 @@ $(document).ready(function(){
     updateAll();
   
 	$("#moneyButton").click(function(){
+		moneyButtonClick(player.clickPower);
+		player.totalManualClicks += player.clickPower;
+	});
+	$("#copyMoneyButton").click(function(){
 		moneyButtonClick(player.clickPower);
 		player.totalManualClicks += player.clickPower;
 	});
